@@ -7,7 +7,7 @@ export default function Marquee({ text }: { text: string }) {
     const fullText = text.repeat(10);
 
     return (
-        <div className="w-full border-t border-b border-white/10 bg-white text-black py-6 md:py-8 overflow-hidden relative flex">
+        <div className="w-full border-t border-b border-white/10 bg-white text-black py-6 md:py-8 overflow-hidden relative flex -rotate-3 scale-110 origin-center z-20 shadow-2xl">
             <motion.div
                 className="whitespace-nowrap flex font-normal font-bebas text-4xl md:text-6xl lg:text-8xl uppercase tracking-tighter pl-4 gap-16 md:gap-32"
                 animate={{ x: [0, -2000] }}
