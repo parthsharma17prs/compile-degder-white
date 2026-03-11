@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
@@ -20,8 +19,6 @@ import LabNotes from '@/components/LabNotes';
 import StickySection from '@/components/StickySection';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
-import CustomCursor from '@/components/CustomCursor';
-import Preloader from '@/components/Preloader';
 import Pricing from '@/components/Pricing';
 
 
@@ -29,22 +26,9 @@ import PrivacyFirst from '@/components/PrivacyFirst';
 
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <>
-      <CustomCursor />
-
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
-      </AnimatePresence>
-
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isLoading ? 0 : 1 }}
-        transition={{ duration: 0.8 }}
-        className="min-h-screen bg-black text-white selection:bg-accent selection:text-black"
-      >
+      <main className="min-h-screen bg-black text-white selection:bg-accent selection:text-black">
         <Navbar />
         <Hero />
         <Marquee text="Provable Compliance  •  Zero Data Exposure  •  Zero-Knowledge Proofs  •  " />
@@ -85,7 +69,7 @@ export default function Home() {
 
         <CallToAction />
         <Footer />
-      </motion.main>
+      </main>
     </>
   );
 }
